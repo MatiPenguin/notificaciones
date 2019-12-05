@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema de Notificados - MatiPenguin</title>
+</head>
+<body>
+
+<button type="button" id="btn">Enviar btn</button>
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
+
+		if (!Notification) {
+			alert('no podes bro perdon');
+
+			return;
+		};
+
+		if (Notification.permission !== 'granted') {
+			Notification.requestPermission();
+		};
+
+
+	});
+		var notificar = function(){
+			if (Notification.permission == 'granted') {
+				var notification = new Notification("Titulo puto de mierda", 
+					{
+						icon: "",
+						body: "Este es el contenido de la notificacion"
+					}
+				);
+
+				notificacion.onClick = function(){
+					window.open("file:///F:/STREAMS/Sistema%20de%20Notificados%20-%20MatiPenguin/index.html");
+				}
+
+			};
+		}
+	var btn = document.getElementById('btn').addEventListener("click", notificar);
+</script>
+
+</body>
+</html>
